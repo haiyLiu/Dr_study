@@ -1,0 +1,71 @@
+\documentclass{report}
+\usepackage{enumerate}
+\usepackage{ctex}
+
+\newcounter{mycnt} %自定义计数器
+\setcounter{mycnt}{0} %给计数器赋值，默认值也为0
+\renewcommand{\themycnt}{\arabic{mycnt}}
+
+\begin{document}
+	\tableofcontents
+	
+	\chapter{基本列表}
+	\begin{enumerate} %有序列表
+		\item 中文
+		\item English
+		\item Fran\c cais
+	\end{enumerate}
+	
+	\begin{itemize} %无序列表
+		\item 中文
+		\item English
+		\item Fran\c cais
+	\end{itemize}
+	
+	\begin{description} %description 环境总是使用 \item 命令的可选参数，把它作为条目的关键字加粗显示
+		\item[中文] 中国的语言文字
+		\item[English] The language of England
+	\end{description}
+	
+	%% 手动设置编号
+	\begin{enumerate}
+		\item 中文
+		\item[1a.] 汉语
+		\item English 
+	\end{enumerate}
+	
+	\begin{itemize}
+		\item[\dag] 中文
+		\item 汉语
+		\item English 
+	\end{itemize}
+	
+	
+	%% 计数器
+		% enumerate 环境的编号是由一组计数器(counter)控制的，当LATEX进入一个enumerate环境时，就把计数器清零，每遇到一个没有可选参数的\item命令，就让计数器的值加1，然后把计数器的值作为编号输出，达到自动编号的目的
+	\begin{enumerate}
+		\item 这是编号 \theenumi
+		\item 这是编号 \theenumi
+	\end{enumerate}
+	
+	%% 使用各种编号表示计数器
+	\begin{enumerate}
+		\item 编号 \arabic{enumi}, \roman{enumi}, \Roman{enumi}, \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+		
+		\item 编号 \arabic{enumi}, \roman{enumi}, \Roman{enumi}, \alph{enumi}, \Alph{enumi}, \fnsymbol{enumi}
+	\end{enumerate}
+	
+	%% 重定义环境编号
+	\renewcommand{\theenumi}{\roman{enumi}} %把\roman{enumi}定义为\theenum
+	\renewcommand{\labelenumi}{(\theenumi)} %定义\labelenumi格式为(\theenumi)
+	\begin{enumerate}
+		\item 使用中文
+		\item Using English
+	\end{enumerate}
+	
+	\stepcounter{mycnt}\themycnt \\ 	% 1; 计数器自增
+	\stepcounter{mycnt}\themycnt \\ 	% 2
+	\addtocounter{mycnt}{1}\themycnt \\ % 3; 让计数器的值加1
+	\addtocounter{mycnt}{-1}\themycnt \\ % 2； 让计数器的值加-1
+	\addtocounter{mycnt}{-1}\themycnt \\ % 1
+\end{document}

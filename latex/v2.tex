@@ -1,0 +1,88 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{booktabs}
+
+%\usepackage[greek,english]{babel} %%希腊字母和西里尔字母包
+%\usepackage[OT2,OT1]{fontenc}{\fontencoding{OT2}\selectfont ABCabc}
+
+\begin{document}
+	%% \quad表示间隔
+	caf\'e\quad G\"odel\quad Anton\'in Dvo\v{o}\'ak
+	
+	\O ster Vr\r{o}
+	
+	K\i rka\u{g}a\c{c}
+	
+	
+	%% 连字，使用{}或\/分开
+	dif{}fer f\/ind flight
+	
+	%% 标点符号使用
+	"\,'A' or 'B'?\," he asked. %  ，不能省略，因为\"是另外一种符号的表示，需要加逗号区分
+	
+	%% 符号-连用情况
+	An inter-word dash or, hyphen, as in X-ray. % -连字符
+	
+	A medium dash for number ranges, like 1--2 or 3$\sim$4. % --表示数字范围
+	
+	A punctuation dash---like this. % ---表示破折号
+	
+	Good: One, two, three$\ldots$
+	
+	中文和English的混排效果并不依赖于 space 的有无。
+	
+	\CJKsetecglue{} %% 禁止汉字与其他内容之间的空格
+	汉字word
+	
+	幻影\phantom{参数}速速隐形  %%可以用于特殊的占位或者对齐效果
+	
+	幻影参数速速隐形
+	
+	
+	这是一行文字\\另一行
+	
+	这是一行文字\linebreak 另一行 \textbackslash %\textbackslash表示反斜线
+	
+	%% 字体
+		% \textit{text} 斜体
+		% \textbf{text} 加宽加粗
+		% \textnormal{text} 恢复成罗马字
+		% \textrm{text} 罗马字
+	\textit{Italic font test}
+	{\bfseries Bold font test}
+	
+	\textrm{Roman font family}
+	
+	\textsf{Sans serif font family}
+	
+	\ttfamily{Typewriter font family}
+	
+	\sffamily
+	\textbf{This is a paragraph of bold and \textit{itlic font, sometimes returning to \textnormal{normal font} is necessary.}}
+	
+	Bold '{\bfseries leaf}'
+	
+	Bold '{\bfseries leaf\/}'
+	
+	Bold '\textbf{leaf}'
+	
+	%% 中文字体
+	{\heiti 这是黑体}
+	
+	{\kaishu 这是楷书}
+	
+	{\fangsong 这是仿宋}
+	
+	\begin{table}
+		\begin{center}
+			\caption{中文字号}
+			\begin{tabular}{lcl}
+				\toprule
+				命令 & 大小（bp） & 意义 \\
+				\midrule
+				\zihao{0} & 42 & \zihao{0}初号 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	\end{table}
+	
+\end{document}

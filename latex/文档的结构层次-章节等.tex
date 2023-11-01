@@ -1,0 +1,63 @@
+\documentclass{report}
+\usepackage{ctex}
+\usepackage{booktabs}
+
+\title{Languages\thanks{本文由xxx赞助}}  %%通常用来表示文章的致谢、文档的版本、作者的详细信息等
+\author{张三\thanks{讲师}\\九章学堂 \and 李四\\天元研究所}
+\date{庚寅盛夏}  %% 可以省略，如果省略，就相当于 \date{\today}
+%\date{\CTEXoptions[today=big]}
+
+\begin{document}
+	\maketitle   %%% 在 article 或 ctexart 文档类中，title不单独成页;在 report, book 或 ctexrep, ctexbook 文档类中，title单独占用一页
+	\tableofcontents	%%% 显示目录  
+	
+	
+	\part{标题和标题页}
+		\begin{table}
+			\begin{center}  %% 在文中的位置居中
+				\caption{章节层次}
+				\begin{tabular}{rlll}  %% 如果想让表格有竖线，就写成{r|l|l|l}
+					\toprule
+					层次 & 名称 & 命令 & 说明 \\
+					\midrule
+					%% \verb|text|可以使latex保留的命令以文本显示
+					-1 & part(部分) & \verb|\part| & 可选的最高层 \\
+					
+					0 & chapter(章) & \verb|\chapter| & report, book 或 ctexrep, ctexbook文档类的最高层 \\
+					
+					1 & section(节) & \verb|\section| & article 或 ctexart 类最高层 \\
+					
+					2 & subsection(小节) & \verb|\subsection| & {} \\
+					
+					3 & subsubsection(小小节) & \verb|\subsection| & report, book 或 ctexrep, ctexbook 类，默认不编号，不编目录 \\
+					
+					4 & paragraph(段) & \verb|\paragraph| & 默认不编号、不编目录 \\
+					
+					5 & subparagraph(小段) & \verb|\subparagraph| & 默认不编号、不编目录 \\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+		\end{table}
+		
+		
+	%% 注意：在 \part 下面，\chapter 或 \section 是连续编号的;在其他情况下，下一级的章节随上一节的编号增加会清零重新编号。
+	\part{Introduction}							% Part I
+		\chapter{Background}					% 	Chapter 1
+	\part{Classfication}						% Part II
+		\chapter{Natural Language}				% 	Chapter 2
+		\chapter{Computer Languages}			% 	Chapter 3
+			\section{Machine Languages}			% 		3.1
+			\section{High Level Languages}		%		3.2
+				\subsection{Compiled Languages}	%			3.2.1
+					\paragraph{Common Lisp}
+					\paragraph{Schema}
+					
+					
+		%%正文中使用完整的长标题，目录和页眉使用短标题。
+		\chapter[展望未来]{展望未来：畅想新时代的计算机排版软件}  
+		
+	\appendix
+	%% 命令 \appendix 后面的所有章(对于 book、report 等)或节(对于 article 等)都将改用字母进行编号:如编号的“Chapter 1” (中文文档类为“第一章”)改为“Appendix A”(中文文档类为“附录 A”)
+	\chapter{习题解答}
+	
+\end{document}

@@ -1,0 +1,61 @@
+%% 第二章 组织你的文本
+
+\documentclass[UTF8]{ctexart}
+
+
+\begin{document}
+	''\,‘A’ or ‘B?’\,'' he asked.
+	
+	%%%% 符号-使用
+	% 符号-表示连接
+	% 符号--表示数字范围
+	% 符号---表示破折号
+	An inter-word dash or, hyphen, as in X-ray.
+	
+	A medium dash for number ranges, like 1--2.
+	
+	A punctuation dash---like this.
+	%%%% -使用
+	
+	%%%% 省略号使用， \dots和\ldots效果相同
+	Good: One, two, three\dots
+	
+	Bad: One, two, three\ldots
+	
+	She $\ldots$ she got it.
+	
+	I've a idea\ldots.
+	%%%% 省略号使用
+	
+	%%%% 特殊符号转义
+	\# \quad \$ \quad \% \quad \& \quad
+	\{ \quad \} \quad \_ \quad \textbackslash
+	%%%% 特殊符号转义
+	
+	\punctstyle{quanjiao}全角式，所有标点全角，有挤压。例如，“标点挤压”。又如《标点符号用法》。
+	
+	\punctstyle{banjiao}半角式，所有标点全角，有挤压。例如，“标点挤压”。又如《标点符号用法》。
+	
+	\punctstyle{kaiming}开明式，部分的标点半角，有挤压。例如，“标点挤压”。又如《标点符号用法》。
+	
+	\punctstyle{hangmobanjiao}行末半角式，仅行末挤压。例如，“标点挤压”。又如《标点符号用法》。
+	
+	\punctstyle{plain}无格式，只有禁则，无挤压。例如，“标点挤压”。又如《标点符号用法》。
+	
+	%%%% 以字母命名的宏
+	Happy \TeX ing. Happy \TeX\ ing.
+	
+	Happy \TeX{} ing. Happy {\TeX} ing.
+	%%%% 以字母命名的宏
+	
+	
+	A sentence. And another.
+	
+	U.S.A means United States Army?
+	
+	Tinker et al.\ made the double play.
+	
+	Roman number XII\@. Yes.
+	
+	
+\end{document}
