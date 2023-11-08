@@ -259,8 +259,8 @@ def load_data_fashion_mnist(batch_size, resize=None, root='~/Datasets/FashionMNI
     trans.append(torchvision.transforms.ToTensor())
     
     transform = torchvision.transforms.Compose(trans)
-    mnist_train = torchvision.datasets.FashionMNIST(root=root, train=True, download=True, transform=transform)
-    mnist_test = torchvision.datasets.FashionMNIST(root=root, train=False, download=True, transform=transform)
+    mnist_train = torchvision.datasets.FashionMNIST(root=root, train=True, download=False, transform=transform)
+    mnist_test = torchvision.datasets.FashionMNIST(root=root, train=False, download=False, transform=transform)
     if sys.platform.startswith('win'):
         num_workers = 0  # 0表示不用额外的进程来加速读取数据
     else:
